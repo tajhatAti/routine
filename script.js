@@ -332,7 +332,7 @@ function renderHeroAndPriority(state) {
   } else if (state.mode === "after-hours") {
     badge = "🌙 আজকের ক্লাস শেষ"; subject = "আগামীকালের প্রস্তুতি";
     meta = `পরবর্তী দিন: ${DAY_FULL_BN[state.upcomingDayIndex]} · ${state.upcomingClasses.length} টি ক্লাস`;
-    status = "খ' শাখার জন্য প্রযোজ্য";
+    status = "ক' শাখার জন্য প্রযোজ্য";
   }
 
   $("#priorityBadge").textContent = badge;
