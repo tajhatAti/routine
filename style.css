@@ -505,3 +505,10 @@ body::before {
 .gpa-modal {
   position: fixed; inset: 0; background: hsl(222 60% 2% / 0.75);
  
+#statusLine {
+  color: #22d3ee !important; /* সায়ান কালার */
+  font-weight: 700 !important; /* মোটা লেখা */
+  border-color: rgba(34, 211, 238, 0.4) !important;
+  background: rgba(34, 211, 238, 0.1) !important;
+}
+   
