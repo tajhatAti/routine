@@ -12,29 +12,30 @@ const DAY_FULL_BN = ["রবিবার", "সোমবার", "মঙ্গ�
 
 const ROUTINE = {
   0: [ // রবিবার
-    { subject: "পদার্থ বিজ্ঞান-২", startTime: "10:20", endTime: "11:05", room: "R-110", type: "theory" },
-    { subject: "জীব বিজ্ঞান-২",   startTime: "11:10", endTime: "11:55", room: "R-110", type: "theory" },
-    { subject: "রসায়ন-২",         startTime: "12:00", endTime: "12:45", room: "R-110", type: "theory" },
-    { subject: "কৃষি তাত্ত্বিক ফসলের উৎপাদন প্রযুক্তি-১", startTime: "12:50", endTime: "13:35", room: "R-110", type: "theory" },
+    { subject: "ইংরেজি-২", startTime: "10:20", endTime: "11:05", room: "R-110", type: "theory" },
+    { subject: "কম্পিউটার আ্যপ্লিকেশন",   startTime: "11:10", endTime: "11:55", room: "R-110", type: "theory" },
+    { subject: "কৃষি তাত্ত্বিক ",         startTime: "12:00", endTime: "12:45", room: "R-110", type: "theory" },
+    { subject: "বাংলা-২", startTime: "12:50", endTime: "13:35", room: "R-110", type: "theory" },
   ],
   1: [ // সোমবার
-    { subject: "ইংরেজি-২",         startTime: "10:20", endTime: "11:05", room: "R-110", type: "theory" },
-    { subject: "পদার্থ বিজ্ঞান-২", startTime: "11:10", endTime: "11:55", room: "R-110", type: "theory" },
-    { subject: "বাংলা-২",          startTime: "12:00", endTime: "12:45", room: "R-110", type: "theory" },
-    { subject: "রসায়ন-২",         startTime: "12:50", endTime: "13:35", room: "R-110", type: "theory" },
+    { subject: "জীববিজ্ঞান-২",         startTime: "09:30", endTime: "10:15", room: "R-110", type: "theory" },
+    { subject: "পদার্থ বিজ্ঞান-২", startTime: "10:20", endTime: "11:05", room: "R-110", type: "theory" },
+    { subject: "রসায়ন-২",          startTime: "11:10", endTime: "11:55", room: "R-110", type: "theory" },
   ],
   2: [ // মঙ্গলবার
-    { subject: "কম্পিউটার অ্যাপ্লিকেশন",       startTime: "09:30", endTime: "10:15", room: "R-110", type: "theory" },
-    { subject: "কৃষি তাত্ত্বিক (ব্যব)", startTime: "10:20", endTime: "11:05", room: "R-110", type: "practical" },
-    { subject: "জীব বিজ্ঞান-২ (ব্যব)",         startTime: "11:10", endTime: "11:55", room: "R-110", type: "theory" },
-    { subject: "রসায়ন (ব্যব)",                 startTime: "12:50", endTime: "13:35", room: "R-110", type: "theory" },
+    { subject: "বাংলা-২",       startTime: "09:30", endTime: "10:15", room: "R-110", type: "theory" },
+    { subject: "পদার্থবিজ্ঞান-২", startTime: "10:20", endTime: "11:05", room: "R-110", type: "theory" },
+    { subject: "রসায়ন-২",                 startTime: "12:00", endTime: "12:45", room: "R-110", type: "theory" },
   ],
   3: [ // বুধবার
-    { subject: "বাংলা-২",                 startTime: "10:20", endTime: "11:05", room: "R-110", type: "theory" },
-    { subject: "পদার্থ বিজ্ঞান-২ (ব্যব)", startTime: "11:10", endTime: "11:55", room: "R-110", type: "practical" },
-    { subject: "ইংরেজি",                  startTime: "12:00", endTime: "12:45", room: "R-110", type: "theory" },
+    { subject: "জীববিজ্ঞান-২",                 startTime: "12:00", endTime: "12:45", room: "R-110", type: "practical" },
+    { subject: "রসায়ন-২", startTime: "12:50", endTime: "13:35", room: "R-110", type: "practical" },
   ],
-  4: [], // বৃহস্পতিবার — ছুটি
+  4: [ // বৃহস্পতিবার 
+    { subject: "কৃষি তাত্ত্বিক ",                 startTime: "10:20", endTime: "11:05", room: "R-110", type: "theory" },
+    { subject: "পদার্থবিজ্ঞান-২", startTime: "11:10", endTime: "11:55", room: "R-110", type: "practical" },
+    { subject: "ইংরেজি",                  startTime: "12:00", endTime: "12:45", room: "R-110", type: "theory" },
+  ], 
   5: [], // শুক্রবার — ছুটি
   6: [], // শনিবার — ছুটি
 };
