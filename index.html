@@ -3,196 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Agriculture Student Portal — Command Center</title>
-  <meta name="description" content="Real-time command center for 2nd semester agriculture students: live class tracking, assignments, GPA tools, and weekly schedule." />
+  <title>Smart Agriculture Student Portal</title>
   <meta name="theme-color" content="#070b14" />
   
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="https://api.iconify.design/lucide/sprout.svg?color=%2300d4ff&width=192&height=192" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="orbs" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-  </div>
-
-  <div id="announcementBar" class="announcement-bar" hidden>
-    <span class="announcement-icon">📌</span>
-    <span class="announcement-text bn" id="announcementText"></span>
-  </div>
-
+  
   <main class="container">
-    <header class="glass hero">
-      <div class="hero-left">
-        <p class="hero-eyebrow" id="dateLine">—</p>
-        <h1 class="hero-title">
-          <span class="aurora">Smart Agriculture</span><br />
-          Student Portal
-        </h1>
-        <p class="hero-status" id="statusLine">লোড হচ্ছে…</p>
-      </div>
-      <div class="hero-right">
-        <div class="poetic-clock" id="poeticClock" aria-label="Live time poem">
-          <span class="poetic-words" id="poeticWords"></span>
-        </div>
-        <div class="clock-mini mono" id="clock">--:--:-- --</div>
-        <div class="clock-label bn">যে সময় যাইতেছে তাহা আর ফিরিবিনা বৎস 🙂</div>
-      </div>
-    </header>
-
     <section class="stats-strip">
       <div class="stat-pill">
-        <span class="stat-dot live"></span>
         <span class="stat-num" id="liveCount">—</span>
         <span class="stat-lbl bn">লাইভ</span>
       </div>
-      <div class="stat-pill">
-        <span class="stat-num" id="todayCount">—</span>
-        <span class="stat-lbl bn">আজকের ভিউ</span>
-      </div>
-      <div class="stat-pill">
-        <span class="stat-num" id="totalCount">—</span>
-        <span class="stat-lbl bn">মোট ভিউ</span>
-      </div>
-      <button class="stat-pill install-btn" id="installBtn" hidden title="Install App">
-        ⬇️ <span class="bn">অ্যাপ ইনস্টল</span>
+
+      <button class="stat-pill install-btn" id="installBtn" title="Install App" style="cursor: pointer; background: var(--aurora);">
+        ⬇️ <span class="bn">অ্যাপ ডাউনলোড</span>
       </button>
     </section>
 
-    <section class="glass focus-card" id="focusCard">
-      <div class="focus-head">
-        <span class="focus-icon" id="focusIcon">🤖</span>
-        <span class="focus-tag" id="focusTag">SMART FOCUS</span>
-      </div>
-      <h2 class="focus-message bn" id="focusMessage">লোড হচ্ছে…</h2>
-      <p class="focus-sub bn" id="focusSub"></p>
-      <div class="focus-progress-wrap" id="focusProgressWrap" hidden>
-        <div class="focus-progress-info">
-          <span class="bn" id="focusProgressLabel">ক্লাস অগ্রগতি</span>
-          <span class="mono" id="focusProgressPct">0%</span>
-        </div>
-        <div class="progress"><div class="progress-bar" id="focusProgressBar"></div></div>
-        <div class="focus-progress-time mono" id="focusProgressTime"></div>
-      </div>
-      <div class="next-day-preview" id="nextDayPreview" hidden>
-        <div class="next-day-head">
-          <span class="next-day-icon">📅</span>
-          <span class="next-day-title bn" id="nextDayTitle">আগামী দিনের রুটিন</span>
-        </div>
-        <div class="next-day-list" id="nextDayList"></div>
-      </div>
-    </section>
-
-    <section class="grid">
-      <div class="col-main">
-        <article class="glass priority" id="priorityCard">
-          <div class="priority-head">
-            <span class="badge" id="priorityBadge">Top Priority</span>
-            <span class="badge subtle" id="priorityCountdown"></span>
-          </div>
-          <h2 class="priority-title" id="prioritySubject">—</h2>
-          <p class="priority-meta" id="priorityMeta"></p>
-          <div class="progress"><div class="progress-bar" id="priorityProgress"></div></div>
-        </article>
-
-        <article class="glass">
-          <div class="schedule-head">
-            <h3>📅 ক্লাস রুটিন</h3>
-            <div class="tabs" role="tablist">
-              <button class="tab active" data-view="today">আজ</button>
-              <button class="tab" data-view="tomorrow">আগামীকাল</button>
-              <button class="tab" data-view="week">সপ্তাহ</button>
-            </div>
-          </div>
-          <div id="scheduleBody" class="schedule-body"></div>
-        </article>
-      </div>
-
-      <aside class="col-aside">
-        <article class="glass">
-          <div class="assign-head">
-            <h3>📝 অ্যাসাইনমেন্ট</h3>
-            <a class="admin-link" href="admin.html" title="অ্যাডমিন">⚙️</a>
-          </div>
-          <ul id="assignList" class="assign-list"></ul>
-          <p class="assign-note bn">শুধুমাত্র অ্যাডমিন অ্যাসাইনমেন্ট যোগ/সম্পাদনা করতে পারবেন।</p>
-        </article>
-      </aside>
-    </section>
-
-    <footer class="foot">
-      Smart Agriculture Student Portal · 2nd Semester · Built with ⚡
-    </footer>
-  </main>
-
-  <div class="notify-overlay" id="notifyOverlay" hidden>
-    <div class="glass notify-card">
-      <div class="notify-head">
-        <span class="notify-icon" id="notifyIcon">📢</span>
-        <h3 class="notify-title bn" id="notifyTitle">বিজ্ঞপ্তি</h3>
-        <button class="btn-icon" id="notifyClose">✕</button>
-      </div>
-      <p class="notify-msg bn" id="notifyMsg"></p>
-    </div>
-  </div>
-
-  <button class="fab" id="gpaToggle" title="GPA Calculator">🎓</button>
-  <div class="gpa-modal" id="gpaModal" hidden>
-    <div class="glass gpa-card">
-      <div class="gpa-head">
-        <h3>🎓 GPA ক্যালকুলেটর</h3>
-        <button class="btn-icon" id="gpaClose">✕</button>
-      </div>
-      <div id="gpaRows" class="gpa-rows"></div>
-      <div class="form-row">
-        <button class="btn ghost" id="gpaAdd">+ কোর্স</button>
-        <button class="btn primary" id="gpaCalc">হিসাব করুন</button>
-      </div>
-      <div class="gpa-result" id="gpaResult">GPA: —</div>
-    </div>
-  </div>
+    </main>
 
   <script>
-    // Register Service Worker
+    // ১. সার্ভিস ওয়ার্কার রেজিস্ট্রেশন (অফলাইন মোডের জন্য)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then(reg => console.log('Service Worker Registered'))
-          .catch(err => console.log('SW Registration Failed', err));
+        navigator.serviceWorker.register('sw.js').catch(err => console.log(err));
       });
     }
 
-    // Install Button Functionality
+    // ২. ইনস্টল লজিক
     let deferredPrompt;
     const installBtn = document.getElementById('installBtn');
 
+    // ব্রাউজার যখন ইনস্টল করার জন্য রেডি হয়
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      installBtn.hidden = false;
+      // বাটনটিকে উজ্জ্বল করা বা স্টাইল পরিবর্তন করা চাইলে এখানে করতে পারিস
+      installBtn.style.opacity = "1"; 
+    });
 
-      installBtn.addEventListener('click', () => {
+    // বাটনে ক্লিক করলে যা হবে
+    installBtn.addEventListener('click', () => {
+      if (deferredPrompt) {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
           if (choiceResult.outcome === 'accepted') {
-            console.log('App Installed');
+            console.log('User installed the app');
           }
-          installBtn.hidden = true;
           deferredPrompt = null;
         });
-      });
+      } else {
+        // যদি ব্রাউজার থেকে সাপোর্ট না পায় বা অলরেডি ইনস্টল থাকে
+        alert("আপনার ব্রাউজারে এটি সরাসরি ইনস্টলযোগ্য অথবা অলরেডি ইনস্টল করা আছে।");
+      }
     });
 
+    // ইনস্টল হয়ে গেলে বাটনটির লেখা বদলে দেওয়া (অপশনাল)
     window.addEventListener('appinstalled', () => {
-      installBtn.hidden = true;
-      console.log('PWA Installed successfully');
+      installBtn.innerHTML = "✅ ইনস্টলড";
+      deferredPrompt = null;
     });
   </script>
 
