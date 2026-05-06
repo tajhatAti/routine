@@ -1,0 +1,21 @@
+{
+  "name": "Smart Agriculture Student Portal",
+  "short_name": "AgriPortal",
+  "description": "Real-time command center for Agriculture students.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#00d4ff",
+  "icons": [
+    {
+      "src": "https://api.iconify.design/lucide/sprout.svg?color=%2300d4ff&width=192&height=192",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "https://api.iconify.design/lucide/sprout.svg?color=%2300d4ff&width=512&height=512",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
